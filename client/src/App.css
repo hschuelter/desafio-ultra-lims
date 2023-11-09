@@ -1,0 +1,139 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.card {
+  padding: 2em;
+}
+
+input {
+  all: unset;
+}
+button {
+  all: unset;
+}
+
+.search-field {
+  background-color: white;
+  border-radius: 8px 0px 0px 8px;
+  border: #242424 solid 2px;
+  border-right: white;
+  color: black;
+
+  text-align: left;
+  
+  height: 21px;
+  padding: 2px 5px 1px;
+}
+
+.search-field::placeholder {
+  color: black;
+  opacity: 0.5;
+  font-size: 12px;
+
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.search-button {
+  background-color: #242424;
+  border-radius: 0px 8px 8px 0px;
+  border: #242424 solid 2px;
+  border-left: white;
+  height: 18px;
+  padding: 1px 12px 5px;
+  margin-top: 8px;
+}
+.search-button:hover {
+  background-color: white;
+  border-color: #242424;
+}
+
+.warning-field {
+  color: red;
+  font-size: 10px;
+  width: 100%;
+  text-align: center;
+}
+
+.result-field {
+  color: black;
+  margin-top: 8px;
+}
+
+.header {
+  overflow: hidden;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+
+  color: white;
+  background-color: #242424;
+  
+  font-size: 16px;
+  text-align: center;
+}
+
+.content {
+  display: flex;
+  text-align: center;
+}
+
+.column {
+  width: 100%;
+  min-width: 500px;
+  flex: 1;
+
+}
+
+.add-button {
+  content: '+';
+  padding: 2px 24px;
+  margin-left: 8px;
+  margin-top: 8px;
+  border-radius: 8px;
+
+  color: white;
+  background-color: #242424
+}
+
+.add-button:hover {
+  background-color: #606060;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+  
+  font-size: 10px;
+  text-align: center;
+}
+
+.database {
+  color: #242424;
+}
+
+table td {
+  padding: 0px 8px;
+}
+
+.get-button {
+  color: white;
+  background-color: #242424;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+
