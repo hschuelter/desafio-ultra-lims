@@ -2,7 +2,7 @@ import { useState } from 'react'
 import '../App.css'
 
 export function makeAPICall(api) {
-	return fetch(api + '/api/enderecos');
+	return fetch(api + 'api/enderecos');
 }
 function SearchField(props) {
 

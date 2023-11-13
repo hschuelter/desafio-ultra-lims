@@ -1,9 +1,12 @@
 São necessários dois consoles:
 
 ## Backend
->> npm start
-
+```
+npm start
+```
 
 ## Fronted
->> cd ./client/
->> npm start
+```
+cd ./client/
+npm start
+```

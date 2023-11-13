@@ -46,7 +46,7 @@ function SearchField(props) {
 
         console.log(data);
 
-        fetch(props.api + '/api/post', {
+        fetch(props.api + 'api/post', {
             method: 'POST',
             credentials: 'same-origin',
             mode: 'cors',
