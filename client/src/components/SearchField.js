@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import '../App.css'
 
+import SearchIcon from '@mui/icons-material/Search';
+
 export function makeAPICall(param) {
 	return fetch('https://viacep.com.br/ws/' + param + '/json/');
 }
@@ -67,9 +69,11 @@ function SearchField(props) {
                     onChange={handleChange}
                 />
                 <button 
-                    className='search-button'
+                    className='search-button vertical-center'
                     onClick={handleSearchClick}
-                />
+                >
+                    <SearchIcon />
+                </button>
             </div>
             <div className='warning-field'> {warningMessage} </div>
             

@@ -11,14 +11,25 @@ app.use(bodyParser.json());
 
 app.use(express.static(path.resolve(__dirname, '../client/build')));
 
+function checkDuplicate (cep) {
+    const enderecos = data.enderecos;
+    
+    for(var i = 0; i < enderecos.length; i++) {
+        if(cep === enderecos[i].cep) {
+            return true;
+        }
+    }
+    return false;
+}
+
 var data = {
     'enderecos' : [
         {
-            "cep" : '89203070',
-            "logradouro" : "Rua Jacob Eisenhuth",
-            "cidade" : "Joinville",
-            "estado" : "SC",
-            "bairro" : "Atiradores"
+            "cep" : '01327900',
+            "logradouro" : "Rua Treze de Maio",
+            "cidade" : "São Paulo",
+            "estado" : "SP",
+            "bairro" : "Bela Vista"
         },
         {
             "cep" : "80240060",
@@ -47,8 +58,11 @@ app.post("/api/post", (req, res) => {
         estado,
         bairro
     };
-    data.enderecos.push(novo_endereco);
-    res.send({ status: 'SUCCESS' });
+
+    if (!checkDuplicate(cep)) {
+        data.enderecos.push(novo_endereco);
+        res.send({ status: 'SUCCESS' });
+    }
 });
 
 app.listen(PORT, () => {
