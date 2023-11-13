@@ -5,7 +5,7 @@ export function makeAPICall(param) {
 	return fetch('https://viacep.com.br/ws/' + param + '/json/');
 }
 
-function SearchField() {
+function SearchField(props) {
 	const [searchCEP, setSearchCEP] = useState('')
 	const [resultCEP, setResultCEP] = useState('')
 	const [warningMessage, setWarningMessage] = useState('')
@@ -46,7 +46,7 @@ function SearchField() {
 
         console.log(data);
 
-        fetch('http://localhost:3001/api/post', {
+        fetch(props.api + '/api/post', {
             method: 'POST',
             credentials: 'same-origin',
             mode: 'cors',
@@ -59,17 +59,18 @@ function SearchField() {
 
 	return (
 		<div>
-            <input
-                className='search-field' 
-                placeholder='Digite o CEP...'
-                value={searchCEP} 
-                maxLength={8} 
-                onChange={handleChange}
-            />
-            <button 
-                className='search-button'
-                onClick={handleSearchClick}
-            />
+            <div className='search-field'>
+                <input
+                    placeholder='Digite o CEP...'
+                    value={searchCEP} 
+                    maxLength={8} 
+                    onChange={handleChange}
+                />
+                <button 
+                    className='search-button'
+                    onClick={handleSearchClick}
+                />
+            </div>
             <div className='warning-field'> {warningMessage} </div>
             
             <div className='result-field'>

@@ -1,19 +1,18 @@
 import { useState } from 'react'
 import '../App.css'
 
-export function makeAPICall() {
-	return fetch('http://localhost:3001/api/enderecos');
+export function makeAPICall(api) {
+	return fetch(api + '/api/enderecos');
 }
-function SearchField() {
+function SearchField(props) {
 
 	const [data, setData] = useState([])
 
-
 	async function handleClickEvent() {
-		let result = await makeAPICall();
+		let result = await makeAPICall(props.api);
 		let response = await result.json();
 		await setData(response.enderecos);
-		console.log(data);
+		// console.log(data);
 	}
 
 	return (
